@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>#lostbalcony</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" media="screen and (max-width: 320px)" href="css/gallery1.css">
+  <link rel="stylesheet" media="screen and (max-width: 500px)" href="css/gallery2.css">
+  <link rel="stylesheet" media="screen and (max-width: 640px)" href="css/gallery3.css">
+  <link rel="stylesheet" media="screen and (max-width: 1599px)" href="css/gallery4.css">
+  <link rel="stylesheet" media="screen and (min-width: 1600px)" href="css/gallery7.css">
+  <script>
+  let currentLang = "de";
+  
+  let lostBalconyByLang = {
+    "bg": "Ne samo izgubeniyat balkon na Evropa!",
+	"dk": "Ikke kun Europas tabte altan!",
+	"de": "Nicht nur der verlorene Balkon Europas!",
+	"ee": "Mitte ainult Euroopa kadunud rõdu!",
+	"en": "Not only the lost balcony of Europe!",
+	"es": "¡No sólo el balcón perdido de Europa!",
+	"fi": "Ei vain Euroopan kadonnut parveke!",
+	"fr": "Pas seulement le balcon perdu de l'Europe !",
+	"ge": "ara mart’o evrop’is dak’arguli aivani!",
+	"gr": "Óchi móno to chaméno balkóni tis Evrópis!",
+	"hr": "Ne samo izgubljeni balkon Europe!",
+	"hu": "Nem csak Európa elveszett erkélye!",
+	"ie": "Ní hamháin BALCÓIN caillte na hEorpa!",
+	"it": "Non solo il balcone perduto d'Europa!",
+	"lt": "Ne tik prarastas Europos balkonas!",
+	"lv": "Ne tikai Eiropas pazaudētais balkons!",
+	"md": "Nu numai balconul pierdut al Europei!",
+	"mt": "Mhux biss il-gallarija mitlufa tal-Ewropa!",
+	"nl": "Niet alleen het verloren balkon van Europa!",
+	"pl": "Nie tylko zaginiony balkon Europy!",
+	"pt": "Não só a varanda perdida da Europa!",
+	"ro": "Nu numai balconul pierdut al Europei!",
+	"sk": "Nielen stratený balkón Európy!",
+	"si": "Ne samo izgubljeni balkon Evrope!",
+	"se": "Inte bara Europas förlorade balkong!",
+	"ua": "Ne tilʹky vtrachenyy balkon Yevropy!"};
+
+  let georgiaByLang = {
+    "bg": "Gruziya",
+	"dk": "Georgien",
+	"de": "Georgien",
+	"ee": "Gruusia",
+	"en": "Georgia",
+	"es": "Georgia",
+	"fi": "Georgia",
+	"fr": "Géorgie",
+	"ge": "Sakartwelo",
+	"gr": "Georgía",
+	"hr": "Gruzija",
+	"hu": "Grúzia",
+	"ie": "Georgia",
+	"it": "Georgia",
+	"lt": "Gruzija",
+	"lv": "Gruzija",
+	"md": "Gruzija",
+	"mt": "Ġeorġja",
+	"nl": "Georgië",
+	"pl": "Gruzja",
+	"pt": "Geórgia",
+	"ro": "Georgia",
+	"sk": "Gruzínsko",
+	"si": "Gruzija",
+	"se": "Georgien",
+	"ua": "Hruziya"};
+
+  function showMission() {
+    // Create a popup text window
+	let container = document.body;
+	let newMissionWindow = document.createElement("div");
+	newMissionWindow.setAttribute("class", "text-window");
+	newMissionWindow.setAttribute("onclick", "closeText()");
+	container.appendChild(newMissionWindow);
+	let newMissionText = document.createElement("div");
+	let mText = document.createElement('iframe');
+	mText.style.display = "block";
+	mText.frameborder = "0";
+	mText.scrolling = "auto";
+	mText.width = "100%"
+	mText.height = "100%"
+	mText.src = currentLang + ".html";
+	mText.setAttribute("onclick", "closeText()");
+	newMissionText.appendChild(mText);
+	newMissionWindow.appendChild(newMissionText);
+  }
+  
+  function changeLang(event) {
+    currentLang = this.options[this.selectedIndex].value;	
+	let link = document.querySelector("#gallery-title");
+	document.querySelector("#balcony-text").remove();
+	document.querySelector("#georgia-text").remove();
+	let balcony = document.createElement("p");
+    balcony.setAttribute("id", "balcony-text");
+    link.appendChild(balcony);
+    let bText = document.createTextNode(lostBalconyByLang[currentLang]);
+    balcony.appendChild(bText);
+	let georgia = document.createElement("h2");
+    georgia.setAttribute("id", "georgia-text");
+    link.appendChild(georgia);
+    let gText = document.createTextNode(georgiaByLang[currentLang]);
+    georgia.appendChild(gText);
+	showMission();	
+  }
+  </script>
+</head>
+<body>
+
+  <header id="header-main">
+  
+    <nav class="wrapper-main">
+      <span style="margin-top: 30px; font-weight: 700; font-size: 40px; font-family: Arial;">#lostbalcony</span>
+	  <select onchange="changeLang.call(this, event)" id="language-picker-select">
+	    <!-- Bulgarien -->
+        <option value="bg">BG - Bǎlgariya</option>
+		<option value="de" selected="selected">DE - Deutsch</option>
+		<!-- Dänemark -->
+		<option value="dk">DK - dansk</option>
+		<!-- Estland -->
+		<option value="ee">EE - eesti keel</option>
+		<!-- Griechenland -->
+		<option value="en">EN - English</option>
+		<!-- Spanien -->
+		<option value="es">ES - español</option>
+		<!-- Finnland -->
+		<option value="fi">FI - suomi</option>
+		<option value="fr">FR - français</option>
+		<!-- Georgien -->
+		<option value="ge">GE - kartuli</option>
+		<option value="gr">GR - modern greek</option>
+		<!-- Kroatien -->
+		<option value="hr">HR - hrvatski</option>
+		<!-- Ungarn -->
+		<option value="hu">HU - magyar</option>
+		<!-- Irish -->
+		<option value="ie">IE - Gaelic</option>
+		<option value="it">IT - italiano</option>
+		<!-- Litauen -->
+		<option value="lt">LT - lietuvių kalba</option>
+		<!-- Lettland -->
+		<option value="lv">LV - latviešu valoda</option>
+		<!-- Moldau (Moldawien) -->
+		<option value="md">MD - moldovenească</option>
+		<!-- Malata -->
+		<option value="mt">MT - Malti</option>
+		<!-- Niederlande -->
+		<option value="nl">NL - Nederlands</option>
+		<!-- Polen -->
+		<option value="pl">PL - polski</option>
+		<!-- Portugal -->
+		<option value="pt">PT - português</option>
+		<!-- Rumänien -->
+		<option value="ro">RO - română</option>
+		<!-- Slowakei -->
+		<option value="sk">SK - slovenčina</option>
+		<!-- Slowenien -->
+		<option value="si">SI - slovenščina</option>
+		<!-- schweden -->
+		<option value="se">SE - svenska</option>
+		<!-- Ukraine -->
+		<option value="ua">UA - ukrainska</option>
+      </select>
+    </nav>
+  </header>
+
+  <section id="index-gallery" class="wrapper-gallery">
+    <a id="gallery-title" onclick="showMission()"><p id="balcony-text">Nicht nur der verlorene Balkon Europas!</p>
+    <h2 id="georgia-text">Georgien</h2></a>
+    <div class="gallery-img img-1">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-2">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-3">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-4">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-5">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-6">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-7">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-8">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-9">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-10">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-11">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-12">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-13">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-14">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-15">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-16">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-17">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-18">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-19">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-20">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-21">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-22">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-23">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-24">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-25">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-26">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-27">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-28">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-29">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-30">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-31">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-32">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-33">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-34">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-35">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-36">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-37">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-38">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-39">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-40">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-41">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-42">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-43">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-44">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-45">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-46">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-47">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-48">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-49">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-50">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-51">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-52">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-53">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-54">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-55">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-56">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-57">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-58">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-59">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-60">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-61">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-62">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-63">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-64">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-65">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-66">
+      <div><a href="#">This is a title</a></div>
+    </div>
+    <div class="gallery-img img-67">
+      <div><a href="#">This is a title</a></div>
+    </div>
+  </section>
+  <script src="js/gallery.js"></script>
+
+  <section id="footer-main">
+    <div class="footer-links">
+	  <a href="#">Impressum</a>
+	  <a href="mailto:info@lostbalcony.eu">Contact</a>
+	</div>
+	<div class="footer-copyright">© Copyright 2022 lostbalcony.eu - All Rights Reserved </div>
+  <section>
+</body>
+</html>
