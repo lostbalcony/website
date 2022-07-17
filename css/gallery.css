@@ -1,27 +1,3 @@
-/* Gallery container */
-
-#index-gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-gap: 10px;
-    grid-template-areas:
-    "gallery-title gallery-title gallery-title gallery-title gallery-title gallery-title gallery-title"
-    "img1  img2  img2  img3  img4  img5  img6"
-    "img7  img7  img8  img9  img10 img11 img11"
-	"img12 img13 img13 img14 img15 img15 img16"
-	"img17 img17 img18 img19 img20 img21 img21"
-	"img22 img22 img23 img24 img25 img25 img26"
-	"img27 img28 img28 img29 img30 img31 img32"
-	"img33 img34 img35 img36 img37 img38 img39"
-	"img40 img40 img41 img42 img43 img44 img45"
-	"img46 img47 img48 img49 img50 img51 img51"
-	"img52 img52 img53 img54 img55 img55 img56"
-	"img57 img58 img59 img60 img61 img62 img62"
-	"img63 img64 img64 img65 img66 img66 img67";
-    cursor: pointer;
-}
-
 #index-gallery .gallery-img {
     width: 100%;
     height: 300px;
@@ -31,43 +7,11 @@
     cursor: pointer;
 }
 
-#index-gallery #gallery-title {
-    grid-area: gallery-title;
-}
-
-#index-gallery #gallery-title p {
-    padding-bottom: 10px;
-}
-
-#index-gallery #gallery-title h2 {
-    padding-bottom: 10px;
-}
-
- /* unvisited link */
-a:link {
-  color: red;
-}
-
-/* visited link */
-a:visited {
-  color: green;
-}
-
-/* mouse over link */
-a:hover {
-  color: hotpink;
-}
-
-/* selected link */
-a:active {
-  color: blue;
-} 
-
 /* Images */
-
 #index-gallery .img-1 {
-    grid-area: img1;
-    background-image: url("../img/thumbs/img1.jpeg");
+    grid-area: img1h;
+    background-image: url("../img/thumbs/img1h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-2 {
@@ -86,13 +30,15 @@ a:active {
 }
 
 #index-gallery .img-5 {
-    grid-area: img5;
-    background-image: url("../img/thumbs/img5.jpeg");
+    grid-area: img5h;
+    background-image: url("../img/thumbs/img5h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-6 {
-    grid-area: img6;
-    background-image: url("../img/thumbs/img6.jpeg");
+    grid-area: img6h;
+    background-image: url("../img/thumbs/img6h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-7 {
@@ -106,13 +52,15 @@ a:active {
 }
 
 #index-gallery .img-9 {
-    grid-area: img9;
-    background-image: url("../img/thumbs/img9.jpeg");
+    grid-area: img9h;
+    background-image: url("../img/thumbs/img9h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-10 {
-    grid-area: img10;
-    background-image: url("../img/thumbs/img10.jpeg");
+    grid-area: img10h;
+    background-image: url("../img/thumbs/img10h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-11 {
@@ -121,24 +69,28 @@ a:active {
 }
 
 #index-gallery .img-12 {
-    grid-area: img12;
-    background-image: url("../img/thumbs/img12.jpeg");
+    grid-area: img12h;
+    background-image: url("../img/thumbs/img12h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-13 {
-    grid-area: img13;
-    background-image: url("../img/thumbs/img13.jpeg");
+    grid-area: img13h;
+    background-image: url("../img/thumbs/img13h.jpeg");
+	height: 610px;
 }
 
 
 #index-gallery .img-14 {
-    grid-area: img14;
-    background-image: url("../img/thumbs/img14.jpeg");
+    grid-area: img14h;
+    background-image: url("../img/thumbs/img14h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-15 {
-    grid-area: img15;
-    background-image: url("../img/thumbs/img15.jpeg");
+    grid-area: img15h;
+    background-image: url("../img/thumbs/img15h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-16 {
@@ -152,8 +104,9 @@ a:active {
 }
 
 #index-gallery .img-18 {
-    grid-area: img18;
-    background-image: url("../img/thumbs/img18.jpeg");
+    grid-area: img18h;
+    background-image: url("../img/thumbs/img18h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-19 {
@@ -167,13 +120,15 @@ a:active {
 }
 
 #index-gallery .img-21 {
-    grid-area: img21;
-    background-image: url("../img/thumbs/img21.jpeg");
+    grid-area: img21h;
+    background-image: url("../img/thumbs/img21h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-22 {
-    grid-area: img22;
-    background-image: url("../img/thumbs/img22.jpeg");
+    grid-area: img22h;
+    background-image: url("../img/thumbs/img22h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-23 {
@@ -188,8 +143,9 @@ a:active {
 }
 
 #index-gallery .img-25 {
-    grid-area: img25;
-    background-image: url("../img/thumbs/img25.jpeg");
+    grid-area: img25h;
+    background-image: url("../img/thumbs/img25h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-26 {
@@ -213,8 +169,9 @@ a:active {
 }
 
 #index-gallery .img-30 {
-    grid-area: img30;
-    background-image: url("../img/thumbs/img30.jpeg");
+    grid-area: img30h;
+    background-image: url("../img/thumbs/img30h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-31 {
@@ -234,13 +191,15 @@ a:active {
 
 
 #index-gallery .img-34 {
-    grid-area: img34;
-    background-image: url("../img/thumbs/img34.jpeg");
+    grid-area: img34h;
+    background-image: url("../img/thumbs/img34h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-35 {
-    grid-area: img35;
-    background-image: url("../img/thumbs/img35.jpeg");
+    grid-area: img35h;
+    background-image: url("../img/thumbs/img35h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-36 {
@@ -254,8 +213,9 @@ a:active {
 }
 
 #index-gallery .img-38 {
-    grid-area: img38;
-    background-image: url("../img/thumbs/img38.jpeg");
+    grid-area: img38h;
+    background-image: url("../img/thumbs/img38h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-39 {
@@ -269,8 +229,9 @@ a:active {
 }
 
 #index-gallery .img-41 {
-    grid-area: img41;
-    background-image: url("../img/thumbs/img41.jpeg");
+    grid-area: img41h;
+    background-image: url("../img/thumbs/img41h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-42 {
@@ -300,8 +261,9 @@ a:active {
 }
 
 #index-gallery .img-47 {
-    grid-area: img47;
-    background-image: url("../img/thumbs/img47.jpeg");
+    grid-area: img47h;
+    background-image: url("../img/thumbs/img47h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-48 {
@@ -310,8 +272,9 @@ a:active {
 }
 
 #index-gallery .img-49 {
-    grid-area: img49;
-    background-image: url("../img/thumbs/img49.jpeg");
+    grid-area: img49h;
+    background-image: url("../img/thumbs/img49h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-50 {
@@ -330,14 +293,16 @@ a:active {
 }
 
 #index-gallery .img-53 {
-    grid-area: img53;
-    background-image: url("../img/thumbs/img53.jpeg");
+    grid-area: img53h;
+    background-image: url("../img/thumbs/img53h.jpeg");
+	height: 610px;
 }
 
 
 #index-gallery .img-54 {
-    grid-area: img54;
-    background-image: url("../img/thumbs/img54.jpeg");
+    grid-area: img54h;
+    background-image: url("../img/thumbs/img54h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-55 {
@@ -356,8 +321,9 @@ a:active {
 }
 
 #index-gallery .img-58 {
-    grid-area: img58;
-    background-image: url("../img/thumbs/img58.jpeg");
+    grid-area: img58h;
+    background-image: url("../img/thumbs/img58h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-59 {
@@ -381,8 +347,9 @@ a:active {
 }
 
 #index-gallery .img-63 {
-    grid-area: img63;
-    background-image: url("../img/thumbs/img63.jpeg");
+    grid-area: img63h;
+    background-image: url("../img/thumbs/img63h.jpeg");
+	height: 610px;
 }
 
 
@@ -392,8 +359,9 @@ a:active {
 }
 
 #index-gallery .img-65 {
-    grid-area: img65;
-    background-image: url("../img/thumbs/img65.jpeg");
+    grid-area: img65h;
+    background-image: url("../img/thumbs/img65h.jpeg");
+	height: 610px;
 }
 
 #index-gallery .img-66 {
@@ -407,12 +375,13 @@ a:active {
 }
 
 /* Gallery image titles */
-
 .gallery-img div {
     width: 100%;
     height: 100%;
-    background-color: #000000;
-    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0.0;
+    top: 0;
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -427,7 +396,7 @@ a:active {
 }
 
 .gallery-img div:hover {
-    opacity: 0.8;
+    opacity: 0.9;
     transition: all ease-in-out 100ms;
 }
 
@@ -452,7 +421,6 @@ a:active {
 }
 
 /* Next and previous image */
-
 .img-btn-next {
     display: block;
     padding: 6px 10px;
@@ -469,7 +437,7 @@ a:active {
 }
 
 .img-btn-next:hover {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .img-btn-prev {
@@ -488,7 +456,7 @@ a:active {
 }
 
 .img-btn-prev:hover {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 /* Popup window for text when clicked */

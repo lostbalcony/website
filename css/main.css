@@ -1,6 +1,17 @@
+/* weatherd font */
+@font-face {
+  font-family: weatherd;
+  src: url("weatherd.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: weathers;
+  src: url("weathers.ttf") format("truetype");
+}
+
 /* Wrappers */
 .wrapper-main {
-    margin: 0 1vw;
+    padding: 0;
 }
 
 .wrapper-gallery {
@@ -8,14 +19,27 @@
 }
 
 /* Default text styling */
-p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+header {
+    position: sticky;
+    top: 0px;
+    padding: 0px;
+    z-index: 100;
+    background: white;
 }
 
-h2 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 32px;
+#balcony-text {
+	margin: 0 1vw;
+	padding-left: 4px;
+	padding-bottom: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+}
+
+#georgia-text {
+	margin: 0 1vw;
+	padding-bottom: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 60px;
 }
 
 div {
@@ -28,14 +52,22 @@ div {
     display: grid;
     grid-template-columns: 240px 3fr;
     grid-template-rows: auto;
-    padding-bottom: 60px;
+    padding-bottom: 10px;
+    margin: 0 1vw;
+}
+
+nav select {
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+	cursor: pointer;
 }
 
 #language-picker-select {
-	margin: 30px;
+	margin-top: 70px;
 }
 
 #header-main nav select {
+	padding: 0px;
     justify-self: end;
 }
 
@@ -55,7 +87,7 @@ div {
 }
 
 #header-main nav select option a:hover {
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 #footer-main {
@@ -63,6 +95,8 @@ div {
 }
 
 #footer-main .footer-links {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
   position: absolute;
   margin: 0 1vw;
   padding-bottom: 20px;
@@ -70,9 +104,37 @@ div {
 }
 
 #footer-main .footer-copyright {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
   position: absolute;
   margin: 0 1vw;
   padding-bottom: 20px;
   right: 0px;
 }
 
+/* unvisited link */
+a:link {
+  color: black;
+  text-decoration: none;
+}
+  
+/* visited link */
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+  
+/* mouse over link */
+a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+  
+/* selected link */
+a:active {
+  color: black;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+} 
+  

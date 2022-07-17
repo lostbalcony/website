@@ -89,7 +89,43 @@ function changeImg(changeDir) {
             calcNewImg = galleryImages.length;
         }
     }
-    newImg.setAttribute("src", "img/img" + calcNewImg + ".jpeg");
+	var reader = new XMLHttpRequest();
+	var url = "img/img" + calcNewImg + ".jpeg"
+    // Opens the file and specifies the method (get)
+    // Asynchronous is true
+    reader.open('get', url, true);
+
+    //check each time the ready state changes
+    //to see if the object is ready
+    reader.onreadystatechange = checkReadyState;
+
+    function checkReadyState() {
+
+        if (reader.readyState === 4) {
+
+            //check to see whether request for the file failed or succeeded
+            if ((reader.status == 200) || (reader.status == 0)) {
+
+                //image exists, use it
+				url = "img/img" + calcNewImg + ".jpeg"
+            }
+            else {
+
+                //if the url does not exist, use Hochformat
+				url = "img/img" + calcNewImg + "h.jpeg"
+                return;
+
+            }
+
+        }//end of if (reader.readyState === 4)
+
+    }// end of checkReadyState()
+
+    // Sends the request for the file data to the server
+    // Use null for "get" mode
+    reader.send(null);
+
+	newImg.setAttribute("src", url);
     newImg.setAttribute("id", "current-image");
 
     // Adjust our global variable "getLatestOpenedImg"
