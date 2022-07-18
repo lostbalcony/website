@@ -1,12 +1,12 @@
 /* weatherd font */
 @font-face {
   font-family: weatherd;
-  src: url("weatherd.ttf") format("truetype");
+  src: .jpeg("weatherd.ttf") format("truetype");
 }
 
 @font-face {
   font-family: weathers;
-  src: url("weathers.ttf") format("truetype");
+  src: .jpeg("weathers.ttf") format("truetype");
 }
 
 /* Wrappers */

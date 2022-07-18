@@ -5,21 +5,21 @@
     grid-template-rows: auto;
     grid-gap: 10px;
     grid-template-areas:
-    "img1h	img2   img2   img3   img4   img4   img5h" 		/*  1 */
-    "img1h  img8   img6h  img7   img7   img9h  img5h"		/*  2 */
-	"img11  img11  img6h  img10h img12h img9h  img13h"		/*  3 */
-	"img14h img15h img16  img10h img12h img18h img13h"		/*  4 */
-	"img14h img15h img17  img20  img20  img18h img19" 		/*  5 */
-	"img21h img22h img23  img23  img24  img24  img25h" 		/*  6 */
-	"img21h img22h img26  img26  img27  img27  img25h"		/*  7 */
-	"img28  img29  img30h img34h img35h img31  img31"		/*  8 */
-	"img38h img32  img30h img34h img35h img33  img33"		/*  9 */
-	"img38h img36  img37  img44  img40  img40  img41h"		/* 10 */
-	"img39  img39  img42  img42  img43  img43  img41h"      /* 11 */
-	"img47h img49h img45  img46  img51  img52  img53h"		/* 12 */
-	"img47h img49h img54h img48  img50  img58h img53h"		/* 13 */
-	"img56  img56  img54h img63h img60  img58h img59"		/* 14 */
-	"img57  img55  img61  img63h img62  img62  img65h"		/* 15 */
-	"img64  img64  img66  img66  img67  img67  img65h";		/* 16 */
+    "img1  img2  img2  img3  img4  img4  img5" 		/*  1 */
+    "img1  img8  img6  img7  img7  img9  img5"		/*  2 */
+	"img11 img11 img6  img10 img12 img9  img13"		/*  3 */
+	"img14 img15 img16 img10 img12 img18 img13"		/*  4 */
+	"img14 img15 img17 img20 img20 img18 img19" 	/*  5 */
+	"img21 img22 img23 img23 img24 img24 img25" 	/*  6 */
+	"img21 img22 img26 img26 img27 img27 img25"		/*  7 */
+	"img28 img29 img30 img34 img35 img31 img31"		/*  8 */
+	"img38 img32 img30 img34 img35 img33 img33"		/*  9 */
+	"img38 img36 img37 img44 img40 img40 img41"		/* 10 */
+	"img39 img39 img42 img42 img43 img43 img41"     /* 11 */
+	"img47 img49 img45 img46 img51 img52 img53"		/* 12 */
+	"img47 img49 img54 img48 img50 img58 img53"		/* 13 */
+	"img56 img56 img54 img63 img60 img58 img59"		/* 14 */
+	"img57 img55 img61 img63 img62 img62 img65"		/* 15 */
+	"img64 img64 img66 img66 img67 img67 img65";	/* 16 */
     cursor: pointer;
 }
