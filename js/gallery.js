@@ -50,11 +50,28 @@ if(galleryImages) {
                 newPrevBtn.appendChild(btnPrevText);
                 container.appendChild(newPrevBtn);
                 newPrevBtn.setAttribute("class", "img-btn-prev");
-                newPrevBtn.setAttribute("onclick", "changeImg(0)");
+                newPrevBtn.setAttribute("onclick", "changeImg(-1)");
                 newPrevBtn.style.cssText = "left: " + calcImgToEdge + "px;";
             }
         }
     });
+	document.addEventListener("keydown", function(event) {
+		event.preventDefault();
+        if (event.keyCode == 27) {
+			closeImg();
+		}
+		const key = event.key;
+		switch (key) {
+			case "ArrowLeft":
+			// Left pressed
+			changeImg(-1)
+			break;
+			case "ArrowRight":
+			// Right pressed
+			changeImg(1)
+			break;
+		}
+	});
 }
 
 function closeImg() {
@@ -83,7 +100,7 @@ function changeImg(changeDir) {
             calcNewImg = 1;
         }
     }
-    else if(changeDir === 0) {
+    else if(changeDir === -1) {
         calcNewImg = getLatestOpenedImg - 1;
         if(calcNewImg < 1) {
             calcNewImg = galleryImages.length;
