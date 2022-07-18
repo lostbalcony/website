@@ -28,3 +28,8 @@
     "img64 img65 img66 img67";
     cursor: pointer;
 }
+.gallery1 {display: block; visibility: visible; }
+.gallery2 {display: block; visibility: visible; }
+.gallery3 {display: block; visibility: visible; }
+.gallery4 {display: block; visibility: visible; }
+.gallery7 {display: none;  visibility: hidden; }
