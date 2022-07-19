@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>#lostbalcony</title>
+  <title>Test CSS + divs</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/gallery.css">
@@ -13,8 +13,42 @@
   <link rel="stylesheet" media="screen and (min-width: 1024px)" href="css/gallery3.css">
   <link rel="stylesheet" media="screen and (min-width: 1280px)" href="css/gallery4.css">
   <link rel="stylesheet" media="screen and (min-width: 1600px)" href="css/gallery7.css">
+  <script>
+  function isAnyClassVisible(classes) {
+	for (var c = 0; c < classes.length; c++) {
+	  var name = '.' + classes[c];
+	  if (name !== ".gallery-img")
+	  {
+		var elem = document.querySelector(name)
+		var style = getComputedStyle(elem);
+	    alert(name + " display: " + style.display + " visibility: " + style.visibility);
+	    if (style.display === "block" && 
+		    style.visibility === "visible")
+		{
+	 	  return true;
+		}
+	  }
+    }
+	return false;
+  }
+
+  function calcVisibility() {
+    var imgs = document.getElementsByClassName("gallery-img");
+	for (var i = 0; i < imgs.length; i++) {
+	  var classes = imgs[i].classList;
+	  if (isAnyClassVisible(classes)) {
+	    imgs[i].style.display = "block";
+		imgs[i].style.visibility = "visible";
+	  }
+	  else {
+	    imgs[i].style.display = "none";
+		imgs[i].style.visibility = "hidden";
+	  }
+    }
+  }  
+  </script>
 </head>
-<body>
+<body onLoad="calcVisibility();">
 <div class="gallery1">
 imgs for: w &gt;= 320px
 </div>
@@ -30,4 +64,46 @@ imgs for: w &gt;= 1280px
 <div class="gallery7">
 imgs for: w &gt;= 1600px
 </div>
+<br><br>
+<div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7">
+ 1 1 1</div>
+<div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7">
+ 2 2 2</div>
+<div class="gallery-img gallery4 gallery7">
+ 3 3 3</div>
+<div class="gallery-img gallery2 gallery3 gallery4 gallery7">
+ 4 4 4</div>
+<div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7">
+ 5 5 5</div>
+<div class="gallery-img gallery3 gallery4 gallery7">
+ 6 6 6</div>
+<div class="gallery-img gallery1 gallery3 gallery4 gallery7">
+ 7 7 7</div>
+<div class="gallery-img gallery3 gallery7">
+ 8 8 8</div>
+<div class="gallery-img gallery7">
+ 9 9 9</div>
+<div class="gallery-img gallery4 gallery7">
+101010</div>
+<div class="gallery-img gallery2 gallery3 gallery7">
+111111</div>
+<div class="gallery-img gallery4 gallery7">
+121212</div>
+<div class="gallery-img gallery4 gallery7">
+131313</div>
+<div class="gallery-img gallery3 gallery7">
+141414</div>
+<div class="gallery-img gallery7">
+151515</div>
+<div class="gallery-img gallery4 gallery7">
+161616</div>
+<div class="gallery-img gallery4 gallery7">
+171717</div>
+<div class="gallery-img gallery4 gallery7">
+181818</div>
+<div class="gallery-img gallery7">
+191919</div>
+<div class="gallery-img gallery7">
+202020</div>
 </body>
+</html>
