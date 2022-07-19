@@ -14,9 +14,9 @@
   <link rel="stylesheet" media="screen and (min-width: 1280px)" href="css/gallery4.css">
   <link rel="stylesheet" media="screen and (min-width: 1600px)" href="css/gallery7.css">
   <script>
-  let currentLang = "de";
+  var currentLang = "de";
   
-  let lostBalconyByLang = {
+  var lostBalconyByLang = {
     "bg": "Ne samo izgubeniyat balkon na Evropa!",
 	"dk": "Ikke kun Europas tabte altan!",
 	"de": "Nicht nur der verlorene Balkon Europas!",
@@ -44,7 +44,7 @@
 	"se": "Inte bara Europas förlorade balkong!",
 	"ua": "Ne tilʹky vtrachenyy balkon Yevropy!"};
 
-  let georgiaByLang = {
+  var georgiaByLang = {
     "bg": "Gruziya",
 	"dk": "Georgien",
 	"de": "Georgien",
@@ -74,13 +74,13 @@
 
   function showMission() {
     // Create a popup text window
-	let container = document.body;
-	let newMissionWindow = document.createElement("div");
+	var container = document.body;
+	var newMissionWindow = document.createElement("div");
 	newMissionWindow.setAttribute("class", "text-window");
 	newMissionWindow.setAttribute("onclick", "closeText()");
 	container.appendChild(newMissionWindow);
-	let newMissionText = document.createElement("div");
-	let mText = document.createElement('iframe');
+	var newMissionText = document.createElement("div");
+	var mText = document.createElement('iframe');
 	mText.style.display = "block";
 	mText.frameborder = "0";
 	mText.scrolling = "auto";
@@ -94,31 +94,31 @@
   
   function changeLang(event) {
     currentLang = this.options[this.selectedIndex].value;	
-	let link = document.querySelector("#gallery-title");
+	var link = document.querySelector("#gallery-title");
 	document.querySelector("#balcony-text").remove();
 	document.querySelector("#georgia-text").remove();
-	let balcony = document.createElement("h2");
+	var balcony = document.createElement("h2");
     balcony.setAttribute("id", "balcony-text");
     link.appendChild(balcony);
-    let bText = document.createTextNode(lostBalconyByLang[currentLang]);
+    var bText = document.createTextNode(lostBalconyByLang[currentLang]);
     balcony.appendChild(bText);
-	let georgia = document.createElement("h1");
+	var georgia = document.createElement("h1");
     georgia.setAttribute("id", "georgia-text");
     link.appendChild(georgia);
-    let gText = document.createTextNode(georgiaByLang[currentLang]);
+    var gText = document.createTextNode(georgiaByLang[currentLang]);
     georgia.appendChild(gText);
 	showMission();	
   }
 
   function showImpressum() {
     // Create a popup text window
-	let container = document.body;
-	let newMissionWindow = document.createElement("div");
+	var container = document.body;
+	var newMissionWindow = document.createElement("div");
 	newMissionWindow.setAttribute("class", "text-window");
 	newMissionWindow.setAttribute("onclick", "closeText()");
 	container.appendChild(newMissionWindow);
-	let newMissionText = document.createElement("div");
-	let mText = document.createElement('iframe');
+	var newMissionText = document.createElement("div");
+	var mText = document.createElement('iframe');
 	mText.style.display = "block";
 	mText.frameborder = "0";
 	mText.scrolling = "auto";
@@ -130,9 +130,46 @@
 	newMissionWindow.appendChild(newMissionText);
   }
   
+  function isAnyClassVisible(classes) {
+	for (var c = 0; c < classes.length; c++) {
+	  var name = '.' + classes[c];
+	  if (name !== ".gallery-img" && !name.startsWith("img-"))
+	  {
+		var elem = document.querySelector(name)
+		var style = getComputedStyle(elem);
+	    // alert(name + " display: " + style.display + " visibility: " + style.visibility);
+	    if (style.display === "block" && 
+		    style.visibility === "visible")
+		{
+	 	  return true;
+		}
+	  }
+    }
+	return false;
+  }
+
+  function calcVisibility() {
+    var imgs = document.getElementsByClassName("gallery-img");
+	for (var i = 0; i < imgs.length; i++) {
+	  var classes = imgs[i].classList;
+	  if (isAnyClassVisible(classes)) {
+	    imgs[i].style.display = "block";
+		imgs[i].style.visibility = "visible";
+	  }
+	  else {
+	    imgs[i].style.display = "none";
+		imgs[i].style.visibility = "hidden";
+	  }
+    }
+  }  
+  
+  function initPage() {
+    document.getElementById('language-picker-select').selectedIndex = 1;
+	calcVisibility();
+  }
   </script>
 </head>
-<body class="wrapper-main" onLoad="document.getElementById('language-picker-select').selectedIndex = 1;">
+<body class="wrapper-main" onLoad="initPage();">
   <header id="header-main">
     <nav>
       <div style="margin-top: 10px; margin-bottom: 20px;">
@@ -196,205 +233,205 @@
     </a>
   </header>
   <section id="index-gallery" class="wrapper-gallery">
-    <div class="gallery-img img-1">
+    <div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7 img-1">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-2">
+    <div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7 img-2">
       <div><a href="#">Tbilissi</a></div>
 	</div>
-    <div class="gallery-img img-3">
+    <div class="gallery-img gallery4 gallery7 img-3">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-4">
+    <div class="gallery-img gallery2 gallery3 gallery4 gallery7 img-4">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-5">
+    <div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7 img-5">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-6">
+    <div class="gallery-img gallery3 gallery4 gallery7 img-6">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-7">
+    <div class="gallery-img gallery1 gallery3 gallery4 gallery7 img-7">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-8">
+    <div class="gallery-img gallery3 gallery7 img-8">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-9">
+    <div class="gallery-img gallery7 img-9">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-10">
+    <div class="gallery-img gallery4 gallery7 img-10">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-11">
+    <div class="gallery-img gallery2 gallery3 gallery7 img-11">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-12">
+    <div class="gallery-img gallery4 gallery7 img-12">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-13">
+    <div class="gallery-img gallery4 gallery7 img-13">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-14">
+    <div class="gallery-img gallery3 gallery7 img-14">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-15">
+    <div class="gallery-img gallery7 img-15">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-16">
+    <div class="gallery-img gallery4 gallery7 img-16">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-17">
+    <div class="gallery-img gallery4 gallery7 img-17">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-18">
+    <div class="gallery-img gallery4 gallery7 img-18">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-19">
+    <div class="gallery-img gallery7 img-19">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-20">
+    <div class="gallery-img gallery7 img-20">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-21">
+    <div class="gallery-img gallery7 img-21">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-22">
+    <div class="gallery-img gallery7 img-22">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-23">
+    <div class="gallery-img gallery7 img-23">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-24">
+    <div class="gallery-img gallery7 img-24">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-25">
+    <div class="gallery-img gallery7 img-25">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-26">
+    <div class="gallery-img gallery7 img-26">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-27">
+    <div class="gallery-img gallery7 img-27">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-28">
+    <div class="gallery-img gallery7 img-28">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-29">
+    <div class="gallery-img gallery7 img-29">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-30">
+    <div class="gallery-img gallery7 img-30">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-31">
+    <div class="gallery-img gallery7 img-31">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-32">
+    <div class="gallery-img gallery7 img-32">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-33">
+    <div class="gallery-img gallery7 img-33">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-34">
+    <div class="gallery-img gallery7 img-34">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-35">
+    <div class="gallery-img gallery7 img-35">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-36">
+    <div class="gallery-img gallery7 img-36">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img img-37">
+    <div class="gallery-img gallery7 img-37">
       <div><a href="#">David Gareja</a></div>
     </div>
-    <div class="gallery-img img-38">
+    <div class="gallery-img gallery7 img-38">
       <div><a href="#">David Gareja</a></div>
     </div>
-    <div class="gallery-img img-39">
+    <div class="gallery-img gallery7 img-39">
       <div><a href="#">Kazbegi</a></div>
     </div>
-    <div class="gallery-img img-40">
+    <div class="gallery-img gallery7 img-40">
       <div><a href="#">Kazbegi</a></div>
     </div>
-    <div class="gallery-img img-41">
+    <div class="gallery-img gallery7 img-41">
       <div><a href="#">Kazbegi</a></div>
     </div>
-    <div class="gallery-img img-42">
+    <div class="gallery-img gallery7 img-42">
       <div><a href="#">Kazbegi</a></div>
     </div>
-    <div class="gallery-img img-43">
+    <div class="gallery-img gallery7 img-43">
       <div><a href="#">Kazbegi</a></div>
     </div>
-    <div class="gallery-img img-44">
+    <div class="gallery-img gallery7 img-44">
       <div><a href="#">Kazbegi</a></div>
     </div>
-    <div class="gallery-img img-45">
+    <div class="gallery-img gallery7 img-45">
       <div><a href="#">Kazbegi</a></div>
     </div>
-    <div class="gallery-img img-46">
+    <div class="gallery-img gallery7 img-46">
       <div><a href="#">Kazbegi</a></div>
     </div>
-    <div class="gallery-img img-47">
+    <div class="gallery-img gallery7 img-47">
       <div><a href="#">Kazbegi</a></div>
     </div>
-    <div class="gallery-img img-48">
+    <div class="gallery-img gallery7 img-48">
       <div><a href="#">Kazbegi</a></div>
     </div>
-    <div class="gallery-img img-49">
+    <div class="gallery-img gallery7 img-49">
       <div><a href="#">Kazbegi</a></div>
     </div>
-    <div class="gallery-img img-50">
+    <div class="gallery-img gallery7 img-50">
       <div><a href="#">Kazbegi</a></div>
     </div>
-    <div class="gallery-img img-51">
+    <div class="gallery-img gallery7 img-51">
       <div><a href="#">Kazbegi</a></div>
     </div>
-    <div class="gallery-img img-52">
+    <div class="gallery-img gallery7 img-52">
       <div><a href="#">Kazbegi</a></div>
     </div>
-    <div class="gallery-img img-53">
+    <div class="gallery-img gallery7 img-53">
       <div><a href="#">Kutaissi</a></div>
     </div>
-    <div class="gallery-img img-54">
+    <div class="gallery-img gallery7 img-54">
       <div><a href="#">Kutaissi</a></div>
     </div>
-    <div class="gallery-img img-55">
+    <div class="gallery-img gallery7 img-55">
       <div><a href="#">Kutaissi</a></div>
     </div>
-    <div class="gallery-img img-56">
+    <div class="gallery-img gallery7 img-56">
       <div><a href="#">Kutaissi</a></div>
     </div>
-    <div class="gallery-img img-57">
+    <div class="gallery-img gallery7 img-57">
       <div><a href="#">Kutaissi</a></div>
     </div>
-    <div class="gallery-img img-58">
+    <div class="gallery-img gallery7 img-58">
       <div><a href="#">Kutaissi</a></div>
     </div>
-    <div class="gallery-img img-59">
+    <div class="gallery-img gallery7 img-59">
       <div><a href="#">Kutaissi</a></div>
     </div>
-    <div class="gallery-img img-60">
+    <div class="gallery-img gallery7 img-60">
       <div><a href="#">Kutaissi</a></div>
     </div>
-    <div class="gallery-img img-61">
+    <div class="gallery-img gallery7 img-61">
       <div><a href="#">Tashiskari,<br/>Ushangi Village</a></div>
     </div>
-    <div class="gallery-img img-62">
+    <div class="gallery-img gallery7 img-62">
       <div><a href="#">Tashiskari,<br/>Ushangi Village</a></div>
     </div>
-    <div class="gallery-img img-63">
+    <div class="gallery-img gallery7 img-63">
       <div><a href="#">Tashiskari,<br/>Ushangi Village</a></div>
     </div>
-    <div class="gallery-img img-64">
+    <div class="gallery-img gallery7 img-64">
       <div><a href="#">Borjomi</a></div>
     </div>
-    <div class="gallery-img img-65">
+    <div class="gallery-img gallery7 img-65">
       <div><a href="#">Borjomi</a></div>
     </div>
-    <div class="gallery-img img-66">
+    <div class="gallery-img gallery7 img-66">
       <div><a href="#">Borjomi</a></div>
     </div>
-    <div class="gallery-img img-67">
+    <div class="gallery-img gallery7 img-67">
       <div><a href="#">Borjomi</a></div>
     </div>
   </section>
