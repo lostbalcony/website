@@ -133,7 +133,7 @@
   function isAnyClassVisible(classes) {
 	for (var c = 0; c < classes.length; c++) {
 	  var name = '.' + classes[c];
-	  if (name !== ".gallery-img" && !name.startsWith("img-"))
+	  if (name !== ".gallery-img" && !name.startsWith(".img-"))
 	  {
 		var elem = document.querySelector(name)
 		var style = getComputedStyle(elem);

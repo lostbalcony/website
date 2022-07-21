@@ -17,11 +17,11 @@
   function isAnyClassVisible(classes) {
 	for (var c = 0; c < classes.length; c++) {
 	  var name = '.' + classes[c];
-	  if (name !== ".gallery-img")
+	  if (name !== ".gallery-img" && !name.startsWith(".img-"))
 	  {
 		var elem = document.querySelector(name)
 		var style = getComputedStyle(elem);
-	    // alert(name + " display: " + style.display + " visibility: " + style.visibility);
+	    alert(name + " display: " + style.display + " visibility: " + style.visibility);
 	    if (style.display === "block" && 
 		    style.visibility === "visible")
 		{
