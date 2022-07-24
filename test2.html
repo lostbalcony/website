@@ -20,8 +20,10 @@
 	  if (name !== ".gallery-img" && !name.startsWith(".img-"))
 	  {
 		var elem = document.querySelector(name)
+		elem.classList.remove(name);
+		alert("rm " + name);
 		var style = getComputedStyle(elem);
-	    alert(name + " display: " + style.display + " visibility: " + style.visibility);
+	    //alert(name + " display: " + style.display + " visibility: " + style.visibility);
 	    if (style.display === "block" && 
 		    style.visibility === "visible")
 		{
@@ -41,6 +43,7 @@
 		imgs[i].style.visibility = "visible";
 	  }
 	  else {
+	    //imgs[i].parentNode.removeChild(imgs[i]);
 	    imgs[i].style.display = "none";
 		imgs[i].style.visibility = "hidden";
 	  }
@@ -65,84 +68,48 @@ imgs for: w &gt;= 1280px
 imgs for: w &gt;= 1600px
 </div>
 <br><br>
+<section id="index-gallery" class="wrapper-gallery">
 <div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7 img-1">
-      <div><a href="#">
- 1 1 1</a></div>
-    </div>
+ 1 1 1  <div style="display: block; visibility: visible;"><a href="#">Tbilissi</a></div>
+</div>
 <div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7 img-2">
-      <div><a href="#">
- 2 2 2</a></div>
-    </div>
+ 2 2 2</div>
 <div class="gallery-img gallery4 gallery7 img-3">
-      <div><a href="#">
- 3 3 3</a></div>
-    </div>
+ 3 3 3</div>
 <div class="gallery-img gallery2 gallery3 gallery4 gallery7 img-4">
-      <div><a href="#">
- 4 4 4</a></div>
-    </div>
+ 4 4 4</div>
 <div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7 img-5">
-      <div><a href="#">
- 5 5 5</a></div>
-    </div>
+ 5 5 5</div>
 <div class="gallery-img gallery3 gallery4 gallery7 img-6">
-      <div><a href="#">
- 6 6 6</a></div>
-    </div>
+ 6 6 6</div>
 <div class="gallery-img gallery1 gallery3 gallery4 gallery7 img-7">
-      <div><a href="#">
- 7 7 7</a></div>
-    </div>
+ 7 7 7</div>
 <div class="gallery-img gallery3 gallery7 img-8">
-      <div><a href="#">
- 8 8 8</a></div>
-    </div>
+ 8 8 8</div>
 <div class="gallery-img gallery7 img-9">
-      <div><a href="#">
- 9 9 9</a></div>
-    </div>
+ 9 9 9</div>
 <div class="gallery-img gallery4 gallery7 img-10">
-      <div><a href="#">
-101010</a></div>
-    </div>
+101010</div>
 <div class="gallery-img gallery2 gallery3 gallery7 img-11">
-      <div><a href="#">
-111111</a></div>
-    </div>
-<div class="gallery-img gallery4 gallery7 img-12">
-      <div><a href="#">
-121212</a></div>
-    </div>
+111111</div>
+<!--div class="gallery-img gallery4 gallery7 img-12">
+121212</div>
 <div class="gallery-img gallery4 gallery7 img-13">
-      <div><a href="#">
-131313</a></div>
-    </div>
+131313</div>
 <div class="gallery-img gallery3 gallery7 img-14">
-      <div><a href="#">
-141414</a></div>
-    </div>
+141414</div>
 <div class="gallery-img gallery7 img-15">
-      <div><a href="#">
-161515</a></div>
-    </div>
+151515</div>
 <div class="gallery-img gallery4 gallery7 img-16">
-      <div><a href="#">
-161616</a></div>
-    </div>
+161616</div>
 <div class="gallery-img gallery4 gallery7 img-17">
-      <div><a href="#">
-171717</a></div>
-    </div>
+171717</div>
 <div class="gallery-img gallery4 gallery7 img-18">
-      <div><a href="#">
-181818</a></div>
-    </div>
+181818</div>
 <div class="gallery-img gallery7 img-19">
-      <div><a href="#">
-191919</a></div>
-    </div>
+191919</div>
 <div class="gallery-img gallery7 img-20">
-202020</a></div>
-    </div>
+202020</div-->
+</section>
 </body>
 </html>

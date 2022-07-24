@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>#lostbalcony</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" media="screen and (min-width: 320px)" href="css/gallery1.css">
+  <link rel="stylesheet" media="screen and (min-width: 640px)" href="css/gallery2.css">
+
+  <script>
+  var currentLang = "de";
+  
+  var lostBalconyByLang = {
+    "bg": "Ne samo izgubeniyat balkon na Evropa!",
+	"dk": "Ikke kun Europas tabte altan!",
+	"de": "Nicht nur der verlorene Balkon Europas!",
+	"ee": "Mitte ainult Euroopa kadunud rõdu!",
+	"en": "Not only the lost balcony of Europe!",
+	"es": "¡No sólo el balcón perdido de Europa!",
+	"fi": "Ei vain Euroopan kadonnut parveke!",
+	"fr": "Pas seulement le balcon perdu de l'Europe !",
+	"ge": "ara mart’o evrop’is dak’arguli aivani!",
+	"gr": "Óchi móno to chaméno balkóni tis Evrópis!",
+	"hr": "Ne samo izgubljeni balkon Europe!",
+	"hu": "Nem csak Európa elveszett erkélye!",
+	"ie": "Ní hamháin BALCÓIN caillte na hEorpa!",
+	"it": "Non solo il balcone perduto d'Europa!",
+	"lt": "Ne tik prarastas Europos balkonas!",
+	"lv": "Ne tikai Eiropas pazaudētais balkons!",
+	"md": "Nu numai balconul pierdut al Europei!",
+	"mt": "Mhux biss il-gallarija mitlufa tal-Ewropa!",
+	"nl": "Niet alleen het verloren balkon van Europa!",
+	"pl": "Nie tylko zaginiony balkon Europy!",
+	"pt": "Não só a varanda perdida da Europa!",
+	"ro": "Nu numai balconul pierdut al Europei!",
+	"sk": "Nielen stratený balkón Európy!",
+	"si": "Ne samo izgubljeni balkon Evrope!",
+	"se": "Inte bara Europas förlorade balkong!",
+	"ua": "Ne tilʹky vtrachenyy balkon Yevropy!"};
+
+  var georgiaByLang = {
+    "bg": "Gruziya",
+	"dk": "Georgien",
+	"de": "Georgien",
+	"ee": "Gruusia",
+	"en": "Georgia",
+	"es": "Georgia",
+	"fi": "Georgia",
+	"fr": "Géorgie",
+	"ge": "Sakartwelo",
+	"gr": "Georgía",
+	"hr": "Gruzija",
+	"hu": "Grúzia",
+	"ie": "Georgia",
+	"it": "Georgia",
+	"lt": "Gruzija",
+	"lv": "Gruzija",
+	"md": "Gruzija",
+	"mt": "Ġeorġja",
+	"nl": "Georgië",
+	"pl": "Gruzja",
+	"pt": "Geórgia",
+	"ro": "Georgia",
+	"sk": "Gruzínsko",
+	"si": "Gruzija",
+	"se": "Georgien",
+	"ua": "Hruziya"};
+
+  function showMission() {
+    // Create a popup text window
+	var container = document.body;
+	var newMissionWindow = document.createElement("div");
+	newMissionWindow.setAttribute("class", "text-window");
+	newMissionWindow.setAttribute("onclick", "closeText()");
+	container.appendChild(newMissionWindow);
+	var newMissionText = document.createElement("div");
+	var mText = document.createElement('iframe');
+	mText.style.display = "block";
+	mText.frameborder = "0";
+	mText.scrolling = "auto";
+	mText.width = "100%"
+	mText.height = "100%"
+	mText.src = currentLang + ".html";
+	mText.setAttribute("onclick", "closeText()");
+	newMissionText.appendChild(mText);
+	newMissionWindow.appendChild(newMissionText);
+  }
+  
+  function changeLang(event) {
+    currentLang = this.options[this.selectedIndex].value;	
+	var link = document.querySelector("#gallery-title");
+	document.querySelector("#balcony-text").remove();
+	document.querySelector("#georgia-text").remove();
+	var balcony = document.createElement("h2");
+    balcony.setAttribute("id", "balcony-text");
+    link.appendChild(balcony);
+    var bText = document.createTextNode(lostBalconyByLang[currentLang]);
+    balcony.appendChild(bText);
+	var georgia = document.createElement("h1");
+    georgia.setAttribute("id", "georgia-text");
+    link.appendChild(georgia);
+    var gText = document.createTextNode(georgiaByLang[currentLang]);
+    georgia.appendChild(gText);
+	showMission();	
+  }
+
+  function showImpressum() {
+    // Create a popup text window
+	var container = document.body;
+	var newMissionWindow = document.createElement("div");
+	newMissionWindow.setAttribute("class", "text-window");
+	newMissionWindow.setAttribute("onclick", "closeText()");
+	container.appendChild(newMissionWindow);
+	var newMissionText = document.createElement("div");
+	var mText = document.createElement('iframe');
+	mText.style.display = "block";
+	mText.frameborder = "0";
+	mText.scrolling = "auto";
+	mText.width = "100%"
+	mText.height = "100%"
+	mText.src = "impressum.html";
+	mText.setAttribute("onclick", "closeText()");
+	newMissionText.appendChild(mText);
+	newMissionWindow.appendChild(newMissionText);
+  }
+  
+  function isAnyClassVisible(classes) {
+	for (var c = 0; c < classes.length; c++) {
+	  var name = '.' + classes[c];
+	  if (name !== ".gallery-img" && !name.startsWith(".img-"))
+	  {
+		var elem = document.querySelector(name)
+		var style = getComputedStyle(elem);
+	    // alert(name + " display: " + style.display + " visibility: " + style.visibility);
+	    if (style.display === "block" && 
+		    style.visibility === "visible")
+		{
+	 	  return true;
+		}
+	  }
+    }
+	return false;
+  }
+
+  function calcVisibility() {
+    var imgs = document.getElementsByClassName("gallery-img");
+	for (var i = 0; i < imgs.length; i++) {
+	  var classes = imgs[i].classList;
+	  if (isAnyClassVisible(classes)) {
+	    imgs[i].style.display = "block";
+		imgs[i].style.visibility = "visible";
+	  }
+	  else {
+	    imgs[i].style.display = "none";
+		imgs[i].style.visibility = "hidden";
+	  }
+    }
+  }  
+  
+  function initPage() {
+    document.getElementById('language-picker-select').selectedIndex = 1;
+	calcVisibility();
+  }
+  </script>
+</head>
+<body class="wrapper-main" onLoad="initPage();">
+  <header id="header-main">
+    <nav>
+      <div style="margin-top: 10px; margin-bottom: 20px;">
+	  <span style="font-family: weatherd; font-size: 72px;">#lostbalcony</span>
+	  <span style="font-family: Arial, Helvetica, sans-serif; font-size: 30px; padding-left: 5px;">http://lostbalcony.eu</span>
+	  </div>
+	  <select onchange="changeLang.call(this, event)" id="language-picker-select">
+	    <!-- Bulgarien --> 
+        <option value="bg">&#x1F1E7;&#x1F1EC; &nbsp; BG - Bǎlgariya</option>
+		<option value="de" selected="selected">&#x1F1E9;&#x1F1EA; &nbsp; DE - Deutsch</option>
+		<!-- Dänemark -->
+		<option value="dk">&#x1F1E9;&#x1F1F0; &nbsp; DK - dansk</option>
+		<!-- Estland -->
+		<option value="ee">&#x1F1EA;&#x1F1EA; &nbsp; EE - eesti keel</option>
+		<!-- Griechenland -->
+		<option value="en">&#x1F1EC;&#x1F1E7; &nbsp; EN - English</option>
+		<!-- Spanien -->
+		<option value="es">&#x1F1EA;&#x1F1F8; &nbsp; ES - español</option>
+		<!-- Finnland -->
+		<option value="fi">&#x1F1EB;&#x1F1EE; &nbsp; FI - suomi</option>
+		<option value="fr">&#x1F1EB;&#x1F1F7; &nbsp; FR - français</option>
+		<!-- Georgien -->
+		<option value="ge">&#x1F1EC;&#x1F1EA; &nbsp; GE - kartuli</option>
+		<option value="gr">&#x1F1EC;&#x1F1F7; &nbsp; GR - modern greek</option>
+		<!-- Kroatien -->
+		<option value="hr">&#x1F1ED;&#x1F1F7; &nbsp; HR - hrvatski</option>
+		<!-- Ungarn -->
+		<option value="hu">&#x1F1ED;&#x1F1FA; &nbsp; HU - magyar</option>
+		<!-- Irish -->
+		<option value="ie">&#x1F1EE;&#x1F1EA; &nbsp; IE - Gaelic</option>
+		<option value="it">&#x1F1EE;&#x1F1F9; &nbsp; IT - italiano</option>
+		<!-- Litauen -->
+		<option value="lt">&#x1F1F1;&#x1F1F9; &nbsp; LT - lietuvių kalba</option>
+		<!-- Lettland -->
+		<option value="lv">&#x1F1F1;&#x1F1FB; &nbsp; LV - latviešu valoda</option>
+		<!-- Moldau (Moldawien) -->
+		<option value="md">&#x1F1F2;&#x1F1E9; &nbsp; MD - moldovenească</option>
+		<!-- Malata -->
+		<option value="mt">&#x1F1F2;&#x1F1F9; &nbsp; MT - Malti</option>
+		<!-- Niederlande -->
+		<option value="nl">&#x1F1F3;&#x1F1F1; &nbsp; NL - Nederlands</option>
+		<!-- Polen -->
+		<option value="pl">&#x1F1F5;&#x1F1F1; &nbsp; PL - polski</option>
+		<!-- Portugal -->
+		<option value="pt">&#x1F1F5;&#x1F1F9; &nbsp; PT - português</option>
+		<!-- Rumänien -->
+		<option value="ro">&#x1F1F7;&#x1F1F4; &nbsp; RO - română</option>
+		<!-- Slowakei -->
+		<option value="sk">&#x1F1F8;&#x1F1F0; &nbsp; SK - slovenčina</option>
+		<!-- Slowenien -->
+		<option value="si">&#x1F1F8;&#x1F1EE; &nbsp; SI - slovenščina</option>
+		<!-- schweden -->
+		<option value="se">&#x1F1F8;&#x1F1EA; &nbsp; SE - svenska</option>
+		<!-- Ukraine -->
+		<option value="ua">&#x1F1FA;&#x1F1E6; &nbsp; UA - ukrainska</option>
+      </select>
+    </nav>
+    <a id="gallery-title" onclick="showMission()">
+      <h2 id="balcony-text">Nicht nur der verlorene Balkon Europas!</h2>
+      <h1 id="georgia-text">Georgien</h1>
+    </a>
+  </header>
+  <section id="index-gallery" class="wrapper-gallery">
+    <div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7 img-1">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7 img-2">
+      <div><a href="#">Tbilissi</a></div>
+	</div>
+    <div class="gallery-img gallery4 gallery7 img-3">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery2 gallery3 gallery4 gallery7 img-4">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7 img-5">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery3 gallery4 gallery7 img-6">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery1 gallery3 gallery4 gallery7 img-7">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery3 gallery7 img-8">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-9">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery4 gallery7 img-10">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery2 gallery3 gallery7 img-11">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery4 gallery7 img-12">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery4 gallery7 img-13">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery3 gallery7 img-14">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-15">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery4 gallery7 img-16">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery4 gallery7 img-17">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery4 gallery7 img-18">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-19">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-20">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-21">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-22">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-23">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-24">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-25">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-26">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-27">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-28">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-29">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-30">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-31">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-32">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-33">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-34">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-35">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-36">
+      <div><a href="#">Tbilissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-37">
+      <div><a href="#">David Gareja</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-38">
+      <div><a href="#">David Gareja</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-39">
+      <div><a href="#">Kazbegi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-40">
+      <div><a href="#">Kazbegi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-41">
+      <div><a href="#">Kazbegi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-42">
+      <div><a href="#">Kazbegi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-43">
+      <div><a href="#">Kazbegi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-44">
+      <div><a href="#">Kazbegi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-45">
+      <div><a href="#">Kazbegi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-46">
+      <div><a href="#">Kazbegi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-47">
+      <div><a href="#">Kazbegi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-48">
+      <div><a href="#">Kazbegi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-49">
+      <div><a href="#">Kazbegi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-50">
+      <div><a href="#">Kazbegi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-51">
+      <div><a href="#">Kazbegi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-52">
+      <div><a href="#">Kazbegi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-53">
+      <div><a href="#">Kutaissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-54">
+      <div><a href="#">Kutaissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-55">
+      <div><a href="#">Kutaissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-56">
+      <div><a href="#">Kutaissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-57">
+      <div><a href="#">Kutaissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-58">
+      <div><a href="#">Kutaissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-59">
+      <div><a href="#">Kutaissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-60">
+      <div><a href="#">Kutaissi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-61">
+      <div><a href="#">Tashiskari,<br/>Ushangi Village</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-62">
+      <div><a href="#">Tashiskari,<br/>Ushangi Village</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-63">
+      <div><a href="#">Tashiskari,<br/>Ushangi Village</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-64">
+      <div><a href="#">Borjomi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-65">
+      <div><a href="#">Borjomi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-66">
+      <div><a href="#">Borjomi</a></div>
+    </div>
+    <div class="gallery-img gallery7 img-67">
+      <div><a href="#">Borjomi</a></div>
+    </div>
+  </section>
+  <script src="js/gallery.js"></script>
+
+  <section id="footer-main">
+    <div class="footer-links">
+	  <a style="color: black; text-decoration: underline; text-decoration-thickness: 3px;" onclick="showImpressum()">Impressum</a>
+	  <a href="mailto:info@lostbalcony.eu">Contact</a>
+	</div>
+	<div class="social-list">
+		<div class="soc-item"> <a href="http://google.persoenliches-georgien.de" target="_blank">
+			<span class="socicon-google socicon mbr-iconfont mbr-iconfont-social" title="Google"></span>
+		  </a> </div>
+		<div class="soc-item"> <a href="mailto:?body=%0AUnter%20persoenliches-georgien.de%20findest%20Du%20neue%20Ideen%20f%C3%BCr%20Deinen%20n%C3%A4chsten%20%23Super.jpegaubGeorgien.%0ABeginn Deine%20Reiseplanung%20unter%3A%20http%3A%2F%2Fpersoenliches-georgien.de%2Fplan.html%0A&subject=.jpegaubstipp">
+			<span class="socicon-mail socicon mbr-iconfont mbr-iconfont-social" title="E-Mail senden"></span>
+		  </a> </div>
+		<div class="soc-item"> <a href="https://twitter.com/intent/tweet?text=%40DeGeorgien+hilft+unter+persoenliches-georgien.de+mit+Ideen+f%C3%BCr+den+n%C3%A4chsten+%23Super.jpegaubGeorgien%3A+http%3A%2F%2Fpersoenliches-georgien.de%2Fplan.html" title="Tweet senden" target="_blank">
+			<span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+		  </a> </div>
+		<div class="soc-item"> <a href="https://telegram.me/share/.jpeg?.jpeg=persoenliches-georgien.de+hilft+mit+Ideen+f%C3%BCr+den+n%C3%A4chsten+%23Super.jpegaubGeorgien%3A+http%3A%2F%2Fpersoenliches-georgien.de%2Fplan.html" title="Bei Telegram teilen" target="_blank">
+			<span class="socicon-telegram socicon mbr-iconfont mbr-iconfont-social"></span>
+		  </a> </div>
+		<div class="soc-item"> <a href="https://www.facebook.com/PersoenlichesGeorgien/" title="Facebook Gruppe" target="_blank">
+			<span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+		  </a> </div>
+		<div class="soc-item"> <a href="https://api.whatsapp.com/send?text=Suchst+Du+Unterst%C3%BCtzung+bei+der+Planung+Deines+n%C3%A4chsten+%23Super.jpegaubGeorgien%3F+https%3A%2F%2Fpersoenliches-georgien.de%2F
+" title="WhatsApp" target="_blank">
+			<span class="socicon-whatsapp socicon mbr-iconfont mbr-iconfont-social"></span>
+		  </a> </div>
+		<div class="soc-item"> <a href="https://www.youtube.com/channel/UC9ByMG9KYp-zsR9nMgUdHrw" title="Youtube Channel" target="_blank">
+			<span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+		  </a> </div>
+		<div class="soc-item"> <a href="https://instagram.com/persoenlichesgeorgien/" title="Instagram Beiträge" target="_blank">
+			<span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+		  </a> </div>
+		<div class="soc-item"> <a href="https://www.pinterest.de/pin/create/button/?.jpeg=https://persoenliches-georgien.de&media=https://persoenliches-georgien.de/images/DeGeorgien.png&description=persoenliches-georgien.de" title="Auf Pinterest teilen" target="_blank">
+			<span class="socicon-pinterest socicon mbr-iconfont mbr-iconfont-social"></span>
+		  </a> </div>
+		<div class="soc-item"> <a href="https://tiktok.com/@DeGeorgien" title="TikTok Beiträge" target="_blank">
+			<span class="socicon-tiktok socicon mbr-iconfont mbr-iconfont-social"></span>
+		  </a> </div>
+		<div class="soc-item"> <a href="https://www.behance.net/DeGeorgien" title="Behance Projekte" target="_blank">
+			<span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
+		  </a> </div>
+		<div class="soc-item"> <a href="https://share.flipboard.com/bookmarklet/popout?v=2&title=persoenliches-georgien.de&.jpeg=https%3A%2F%2Fpersoenliches-georgien.de" title="In FlipBoard teilen" target="_blank">
+			<span class="socicon-flipboard socicon mbr-iconfont mbr-iconfont-social"></span>
+		  </a> </div>
+		<div class="soc-item"> <a href="https://getpocket.com/save?.jpeg=https%3A%2F%2Fpersoenliches-georgien.de" title="Mit Pocket teilen" target="_blank">
+			<span class="socicon-pocket socicon mbr-iconfont mbr-iconfont-social"></span>
+		  </a> </div>
+		<div class="soc-item"> <a href="https://degeorgien.tumblr.com/" title="In Tumblr weitere Ideen finden" target="_blank">
+			<span class="socicon-tumblr socicon mbr-iconfont mbr-iconfont-social"></span>
+		  </a> </div>
+		<div class="soc-item"> <a href="https://www.xing.com/spi/shares/new?.jpeg=https://persoenliches-georgien.de" title="Auf Xing teilen" 
+		  onclick="window.open(this.href, 'xing', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
+			<span class="socicon-xing socicon mbr-iconfont mbr-iconfont-social"></span>
+		  </a> </div>
+		<div class="soc-item"> <a href="https://www.linkedin.com/shareArticle?mini=true&.jpeg=https://persoenliches-georgien.de&title=persoenliches-georgien.de&summary=persoenliches-georgien.de&source=persoenliches-georgien.de" title="Auf LinkedIn teilen" 
+		  onclick="window.open(this.href, 'linkedin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
+			<span class="socicon-linkedin socicon mbr-iconfont mbr-iconfont-social"></span>
+		  </a> </div>
+	</div>
+	<div class="footer-copyright">© Copyright 2022 lostbalcony.eu + <a href="https://persoenliches-georgien.de" target="_blank">persoenliches-georgien.de</a> - All Rights Reserved </div>
+  </section>
+</body>
+</html>
