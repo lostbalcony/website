@@ -91,12 +91,14 @@
 	newMissionText.appendChild(mText);
 	newMissionWindow.appendChild(newMissionText);
 	var button = document.createElement('button');
-	button.innerHTML = 'X';
-	button.style.top = 0;
+	button.innerHTML = 'EXIT';
+	button.style.position = 'fixed';
+    button.style.top = '10px';
 	button.onclick = function() {
 		this.parentNode.style.display = 'none';
 	};
-	newMissionWindow.appendChild(button);  }
+	newMissionWindow.appendChild(button);
+  }
   
   function changeLang(event) {
     currentLang = this.options[this.selectedIndex].value;	
@@ -136,7 +138,9 @@
 	newMissionText.appendChild(mText);
 	newMissionWindow.appendChild(newMissionText);
 	var button = document.createElement('button');
-	button.innerHTML = 'X';
+	button.innerHTML = 'EXIT';
+	button.style.position = 'fixed';
+    button.style.top = '10px';
 	button.onclick = function() {
 		this.parentNode.style.display = 'none';
 	};

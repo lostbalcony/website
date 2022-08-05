@@ -55,6 +55,18 @@ if(galleryImages) {
                 newPrevBtn.setAttribute("class", "img-btn-prev");
                 newPrevBtn.setAttribute("onclick", "changeImg(-1)");
                 newPrevBtn.style.cssText = "left: " + calcImgToEdge + "px;";
+
+				var button = document.createElement('button');
+				button.innerHTML = 'EXIT';
+				button.id = 'exit';
+				button.style.position = 'fixed';
+				button.style.top = '10px';
+				button.style.left = '49%';
+				button.style.zIndex = 200;
+				button.onclick = function() {
+					closeImg();
+				};
+				container.appendChild(button);
             }
         }
     });
@@ -81,9 +93,10 @@ function closeImg() {
     // Remove the image window
     document.querySelector(".img-window").remove();
 
-    // Remove the prev/next buttons
+    // Remove the prev/next/exit buttons
     document.querySelector(".img-btn-next").remove();
     document.querySelector(".img-btn-prev").remove();
+	document.getElementById('exit').remove();
 }
 
 function changeImg(changeDir) {
