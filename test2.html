@@ -16,12 +16,12 @@
   <script>
   function isAnyClassVisible(classes) {
 	for (var c = 0; c < classes.length; c++) {
-	  var name = '.' + classes[c];
-	  if (name !== ".gallery-img" && !name.startsWith(".img-"))
+	  var name = classes[c];
+	  if (name !== "gallery-img" && !name.startsWith("img-"))
 	  {
-		var elem = document.querySelector(name)
-		elem.classList.remove(name);
-		alert("rm " + name);
+		var elem = document.querySelector("." + name)
+		elem.classList.remove("." + name);
+		//alert("rm " + name);
 		var style = getComputedStyle(elem);
 	    //alert(name + " display: " + style.display + " visibility: " + style.visibility);
 	    if (style.display === "block" && 
@@ -35,19 +35,15 @@
   }
 
   function calcVisibility() {
-    var imgs = document.getElementsByClassName("gallery-img");
-	for (var i = 0; i < imgs.length; i++) {
-	  var classes = imgs[i].classList;
-	  if (isAnyClassVisible(classes)) {
+    const imgs = document.getElementsByClassName("gallery-img");
+	for (var i = 0; i < imgs.length; i = i+1) {
+	  var vis = isAnyClassVisible(imgs[i].classList);
+	  // alert("cl: " + i + "/" + imgs.length + " " + vis + " " + imgs[i].classList);
+	  if (vis) {
 	    imgs[i].style.display = "block";
 		imgs[i].style.visibility = "visible";
 	  }
-	  else {
-	    //imgs[i].parentNode.removeChild(imgs[i]);
-	    imgs[i].style.display = "none";
-		imgs[i].style.visibility = "hidden";
-	  }
-    }
+	}
   }  
   </script>
 </head>
@@ -70,8 +66,7 @@ imgs for: w &gt;= 1600px
 <br><br>
 <section id="index-gallery" class="wrapper-gallery">
 <div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7 img-1">
- 1 1 1  <div style="display: block; visibility: visible;"><a href="#">Tbilissi</a></div>
-</div>
+ 1 1 1</div>
 <div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7 img-2">
  2 2 2</div>
 <div class="gallery-img gallery4 gallery7 img-3">
@@ -82,34 +77,175 @@ imgs for: w &gt;= 1600px
  5 5 5</div>
 <div class="gallery-img gallery3 gallery4 gallery7 img-6">
  6 6 6</div>
-<div class="gallery-img gallery1 gallery3 gallery4 gallery7 img-7">
+<div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7 img-7">
  7 7 7</div>
-<div class="gallery-img gallery3 gallery7 img-8">
+<div class="gallery-img gallery3 gallery4 gallery7 img-8">
  8 8 8</div>
 <div class="gallery-img gallery7 img-9">
  9 9 9</div>
 <div class="gallery-img gallery4 gallery7 img-10">
 101010</div>
-<div class="gallery-img gallery2 gallery3 gallery7 img-11">
+<div class="gallery-img gallery4 gallery7 img-11">
 111111</div>
-<!--div class="gallery-img gallery4 gallery7 img-12">
+<div class="gallery-img gallery4 gallery7 img-12">
 121212</div>
 <div class="gallery-img gallery4 gallery7 img-13">
 131313</div>
-<div class="gallery-img gallery3 gallery7 img-14">
+<div class="gallery-img gallery7 img-14">
 141414</div>
 <div class="gallery-img gallery7 img-15">
 151515</div>
-<div class="gallery-img gallery4 gallery7 img-16">
+<div class="gallery-img gallery7 img-16">
 161616</div>
 <div class="gallery-img gallery4 gallery7 img-17">
 171717</div>
-<div class="gallery-img gallery4 gallery7 img-18">
+<div class="gallery-img gallery7 img-18">
 181818</div>
 <div class="gallery-img gallery7 img-19">
 191919</div>
 <div class="gallery-img gallery7 img-20">
-202020</div-->
+202020</div>
+<div class="gallery-img gallery7 img-21">
+212121<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-22">
+222222<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-23">
+232323<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-24">
+242424<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-25">
+252525<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-26">
+262626<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-27">
+272727<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-28">
+282828<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-29">
+292929<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-30">
+303030<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-31">
+313131<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-32">
+323232<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-33">
+333333<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-34">
+343434<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-35">
+353535<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-36">
+363636<div><a href="#">Tbilissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-37">
+373737<div><a href="#">David Gareja</a></div>
+</div>
+<div class="gallery-img gallery7 img-38">
+383838<div><a href="#">David Gareja</a></div>
+</div>
+<div class="gallery-img gallery7 img-39">
+393939<div><a href="#">Kazbegi</a></div>
+</div>
+<div class="gallery-img gallery7 img-40">
+404040<div><a href="#">Kazbegi</a></div>
+</div>
+<div class="gallery-img gallery7 img-41">
+414141<div><a href="#">Kazbegi</a></div>
+</div>
+<div class="gallery-img gallery7 img-42">
+424242<div><a href="#">Kazbegi</a></div>
+</div>
+<div class="gallery-img gallery7 img-43">
+434343<div><a href="#">Kazbegi</a></div>
+</div>
+<div class="gallery-img gallery7 img-44">
+444444<div><a href="#">Kazbegi</a></div>
+</div>
+<div class="gallery-img gallery7 img-45">
+454545<div><a href="#">Kazbegi</a></div>
+</div>
+<div class="gallery-img gallery7 img-46">
+464646<div><a href="#">Kazbegi</a></div>
+</div>
+<div class="gallery-img gallery7 img-47">
+474747<div><a href="#">Kazbegi</a></div>
+</div>
+<div class="gallery-img gallery7 img-48">
+484848<div><a href="#">Kazbegi</a></div>
+</div>
+<div class="gallery-img gallery7 img-49">
+494949<div><a href="#">Kazbegi</a></div>
+</div>
+<div class="gallery-img gallery7 img-50">
+505050<div><a href="#">Kazbegi</a></div>
+</div>
+<div class="gallery-img gallery7 img-51">
+515151<div><a href="#">Kazbegi</a></div>
+</div>
+<div class="gallery-img gallery7 img-52">
+525252<div><a href="#">Kazbegi</a></div>
+</div>
+<div class="gallery-img gallery7 img-53">
+535353<div><a href="#">Kutaissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-54">
+545454<div><a href="#">Kutaissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-55">
+555555<div><a href="#">Kutaissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-56">
+565656<div><a href="#">Kutaissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-57">
+575757<div><a href="#">Kutaissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-58">
+585858<div><a href="#">Kutaissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-59">
+595959<div><a href="#">Kutaissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-60">
+606060<div><a href="#">Kutaissi</a></div>
+</div>
+<div class="gallery-img gallery7 img-61">
+616161<div><a href="#">Tashiskari,<br/>Ushangi Village</a></div>
+</div>
+<div class="gallery-img gallery7 img-62">
+626262<div><a href="#">Tashiskari,<br/>Ushangi Village</a></div>
+</div>
+<div class="gallery-img gallery7 img-63">
+636363<div><a href="#">Tashiskari,<br/>Ushangi Village</a></div>
+</div>
+<div class="gallery-img gallery7 img-64">
+646464<div><a href="#">Borjomi</a></div>
+</div>
+<div class="gallery-img gallery7 img-65">
+656565<div><a href="#">Borjomi</a></div>
+</div>
+<div class="gallery-img gallery7 img-66">
+666666<div><a href="#">Borjomi</a></div>
+</div>
+<div class="gallery-img gallery7 img-67">
+676767<div><a href="#">Borjomi</a></div>
+</div>
 </section>
 </body>
 </html>

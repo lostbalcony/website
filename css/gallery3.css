@@ -6,15 +6,14 @@
     grid-gap: 10px;
     grid-template-areas:
     "img1  img2  img2" 		/*  1 */
-    "img1  img8  img6"		/*  2 */
-	"img4  img4  img5"		/*  3 */
-	"img14 img7  img5"		/*  4 */
-	"img14 img11 img11"; 	/*  5 */
+    "img1  img4  img4"		/*  2 */
+	"img6  img8  img5"		/*  3 */
+	"img6  img7  img5";		/*  4 */
 
     cursor: pointer;
 }
-.gallery1 {display: block; visibility: visible; }
-.gallery2 {display: block; visibility: visible; }
+.gallery1 {display: none;  visibility: hidden; }
+.gallery2 {display: none;  visibility: hidden; }
 .gallery3 {display: block; visibility: visible; }
 .gallery4 {display: none;  visibility: hidden; }
 .gallery7 {display: none;  visibility: hidden; }

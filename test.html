@@ -132,12 +132,14 @@
   
   function isAnyClassVisible(classes) {
 	for (var c = 0; c < classes.length; c++) {
-	  var name = '.' + classes[c];
-	  if (name !== ".gallery-img" && !name.startsWith(".img-"))
+	  var name = classes[c];
+	  if (name !== "gallery-img" && !name.startsWith("img-"))
 	  {
-		var elem = document.querySelector(name)
+		var elem = document.querySelector("." + name)
+		elem.classList.remove("." + name);
+		//alert("rm " + name);
 		var style = getComputedStyle(elem);
-	    // alert(name + " display: " + style.display + " visibility: " + style.visibility);
+	    //alert(name + " display: " + style.display + " visibility: " + style.visibility);
 	    if (style.display === "block" && 
 		    style.visibility === "visible")
 		{
@@ -149,18 +151,15 @@
   }
 
   function calcVisibility() {
-    var imgs = document.getElementsByClassName("gallery-img");
-	for (var i = 0; i < imgs.length; i++) {
-	  var classes = imgs[i].classList;
-	  if (isAnyClassVisible(classes)) {
+    const imgs = document.getElementsByClassName("gallery-img");
+	for (var i = 0; i < imgs.length; i = i+1) {
+	  var vis = isAnyClassVisible(imgs[i].classList);
+	  //alert("cl: " + i + "/" + imgs.length + " " + vis + " " + imgs[i].classList);
+	  if (vis) {
 	    imgs[i].style.display = "block";
 		imgs[i].style.visibility = "visible";
 	  }
-	  else {
-	    imgs[i].style.display = "none";
-		imgs[i].style.visibility = "hidden";
-	  }
-    }
+	}
   }  
   
   function initPage() {
@@ -170,7 +169,18 @@
   </script>
 </head>
 <body class="wrapper-main" onLoad="initPage();">
-  <header id="header-main">
+<div class="gallery1">
+</div>
+<div class="gallery2">
+</div>
+<div class="gallery3">
+</div>
+<div class="gallery4">
+</div>
+<div class="gallery7">
+</div>
+<br><br>
+<header id="header-main">
     <nav>
       <div style="margin-top: 10px; margin-bottom: 20px;">
 	  <span style="font-family: weatherd; font-size: 72px;">#lostbalcony</span>
@@ -263,7 +273,7 @@
     <div class="gallery-img gallery4 gallery7 img-10">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img gallery2 gallery3 gallery7 img-11">
+    <div class="gallery-img gallery2 gallery4 gallery7 img-11">
       <div><a href="#">Tbilissi</a></div>
     </div>
     <div class="gallery-img gallery4 gallery7 img-12">
@@ -272,19 +282,19 @@
     <div class="gallery-img gallery4 gallery7 img-13">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img gallery3 gallery7 img-14">
+    <div class="gallery-img gallery7 img-14">
       <div><a href="#">Tbilissi</a></div>
     </div>
     <div class="gallery-img gallery7 img-15">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img gallery4 gallery7 img-16">
+    <div class="gallery-img gallery7 img-16">
       <div><a href="#">Tbilissi</a></div>
     </div>
     <div class="gallery-img gallery4 gallery7 img-17">
       <div><a href="#">Tbilissi</a></div>
     </div>
-    <div class="gallery-img gallery4 gallery7 img-18">
+    <div class="gallery-img gallery7 img-18">
       <div><a href="#">Tbilissi</a></div>
     </div>
     <div class="gallery-img gallery7 img-19">
