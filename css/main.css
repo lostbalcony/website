@@ -125,6 +125,7 @@ nav select {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
   position: absolute;
+  white-space: nowrap;
   margin: 0 1vw;
   padding-bottom: 20px;
   right: 0px;
