@@ -90,7 +90,13 @@
 	mText.setAttribute("onclick", "closeText()");
 	newMissionText.appendChild(mText);
 	newMissionWindow.appendChild(newMissionText);
-  }
+	var button = document.createElement('button');
+	button.innerHTML = 'X';
+	button.style.top = 0;
+	button.onclick = function() {
+		this.parentNode.style.display = 'none';
+	};
+	newMissionWindow.appendChild(button);  }
   
   function changeLang(event) {
     currentLang = this.options[this.selectedIndex].value;	
@@ -115,6 +121,7 @@
 	var container = document.body;
 	var newMissionWindow = document.createElement("div");
 	newMissionWindow.setAttribute("class", "text-window");
+	newMissionWindow.setAttribute("id", "text");
 	newMissionWindow.setAttribute("onclick", "closeText()");
 	container.appendChild(newMissionWindow);
 	var newMissionText = document.createElement("div");
@@ -128,6 +135,12 @@
 	mText.setAttribute("onclick", "closeText()");
 	newMissionText.appendChild(mText);
 	newMissionWindow.appendChild(newMissionText);
+	var button = document.createElement('button');
+	button.innerHTML = 'X';
+	button.onclick = function() {
+		this.parentNode.style.display = 'none';
+	};
+	newMissionWindow.appendChild(button);
   }
   
   function isAnyClassVisible(classes) {
