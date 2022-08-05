@@ -36,6 +36,9 @@ if(galleryImages) {
             newImg.onload = function(){
                 let imgWidth = this.width;
                 let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
+				if (calcImgToEdge < 0) {
+					calcImgToEdge = 0;
+				}
 
                 let newNextBtn = document.createElement("a");
                 let btnNextText = document.createTextNode("Next");
