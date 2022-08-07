@@ -92,6 +92,7 @@
 	newMissionWindow.appendChild(newMissionText);
 	var button = document.createElement('button');
 	button.innerHTML = 'EXIT';
+    button.setAttribute("class", "img-btn-next");
 	button.style.position = 'fixed';
     button.style.top = '10px';
 	button.onclick = function() {
@@ -139,6 +140,7 @@
 	newMissionWindow.appendChild(newMissionText);
 	var button = document.createElement('button');
 	button.innerHTML = 'EXIT';
+    button.setAttribute("class", "img-btn-next");
 	button.style.position = 'fixed';
     button.style.top = '10px';
 	button.onclick = function() {
@@ -464,10 +466,13 @@
   </section>
   <script src="js/gallery.js"></script>
 
-  <section id="footer-main">
-    <div class="footer-links">
+  <table id="footer-main" style="width:100%;table-layout:fixed;border-collapse:separate !important;border-spacing:20px 10px;" width="100%">
+    <tr>
+	  <td class="footer-links">
 	  <a style="color: black; text-decoration: underline; text-decoration-thickness: 3px;" onclick="showImpressum()">Impressum</a>
-	  <a href="mailto:info@lostbalcony.eu">Contact</a> &nbsp; &nbsp; &nbsp;
+	  <a href="mailto:info@lostbalcony.eu">Contact</a>
+	  </td>
+	  <td class="footer-socicon">
 	  <a style="color: black; text-decoration: none;" href="mailto:?body=%0AInformationen%20zur%20Online-Initiative%20%23lostbalcony%20findest%20Du%20unter%3A%20http%3A%2F%2Flostbalcony.eu%0A&subject=%23lostbalcony">
 		<span class="socicon-mail socicon mbr-iconfont mbr-iconfont-social" title="E-Mail senden"></span>
 	  </a> &nbsp;
@@ -490,9 +495,10 @@
 	  </a> &nbsp;
 	  <a style="color: black; text-decoration: none;" href="https://api.whatsapp.com/send?text=Informationen+zu%23lostbalcony+gibt+es+unter+http%3A%2F%2Flostbalcony.eu" title="WhatsApp" target="_blank">
 		<span class="socicon-whatsapp socicon mbr-iconfont mbr-iconfont-social"></span>
-	  </a> &nbsp;
-	</div>
-	<div class="footer-copyright">© Copyright 2022 lostbalcony.eu - All Rights Reserved </div>
-  </section>
+	  </a>
+	  </td>
+	<td class="footer-copyright">© Copyright 2022 lostbalcony.eu - All Rights Reserved </td>
+	</tr>
+  </table>
 </body>
 </html>

@@ -40,7 +40,7 @@ if(galleryImages) {
 					calcImgToEdge = 0;
 				}
 
-                let newNextBtn = document.createElement("a");
+                let newNextBtn = document.createElement("button");
                 let btnNextText = document.createTextNode("Next");
                 newNextBtn.appendChild(btnNextText);
                 container.appendChild(newNextBtn);
@@ -48,7 +48,7 @@ if(galleryImages) {
                 newNextBtn.setAttribute("onclick", "changeImg(1)");
                 newNextBtn.style.cssText = "right: " + calcImgToEdge + "px;";
 
-                let newPrevBtn = document.createElement("a");
+                let newPrevBtn = document.createElement("button");
                 let btnPrevText = document.createTextNode("Prev");
                 newPrevBtn.appendChild(btnPrevText);
                 container.appendChild(newPrevBtn);
@@ -59,6 +59,7 @@ if(galleryImages) {
 				var button = document.createElement('button');
 				button.innerHTML = 'EXIT';
 				button.id = 'exit';
+                button.setAttribute("class", "img-btn-next");
 				button.style.position = 'fixed';
 				button.style.top = '10px';
 				button.style.left = '49%';
