@@ -194,14 +194,16 @@
 <span class="gallery4"></span>
 <span class="gallery7"></span>
 <header id="header-main">
-    <nav>
-      <div style="margin-top: 10px; margin-bottom: 20px;">
-	  <span style="font-family: weatherd; font-size: 72px;">#lostbalcony</span>
-	  <span style="font-family: Arial, Helvetica, sans-serif; font-size: 30px; padding-left: 5px;">http://lostbalcony.eu</span>
+  <div class="container">
+    <div class="media-container-row">
+      <div class="title-container">
+	    <span style="font-family: weatherd; font-size: 72px; display: block; white-space: nowrap; overflow: hidden;">#lostbalcony</span>
+	    <span style="font-family: Arial, Helvetica, sans-serif; font-size: 30px; padding-left: 5px; display: block;">http://lostbalcony.eu</span>
 	  </div>
-	  <select onchange="changeLang.call(this, event)" id="language-picker-select">
+	  <div class="select-container">
+	    <select onchange="changeLang.call(this, event)" id="language-picker-select">
 	    <!-- Bulgarien --> 
-        <option value="bg" disabled>&#x1F1E7;&#x1F1EC; &nbsp; BG - Bǎlgariya</option>
+        <option value="bg">&#x1F1E7;&#x1F1EC; &nbsp; BG - Bǎlgariya</option>
 		<option value="de" selected="selected">&#x1F1E9;&#x1F1EA; &nbsp; DE - Deutsch</option>
 		<!-- Dänemark -->
 		<option value="dk" disabled>&#x1F1E9;&#x1F1F0; &nbsp; DK - dansk</option>
@@ -230,12 +232,12 @@
 		<option value="lv" disabled>&#x1F1F1;&#x1F1FB; &nbsp; LV - latviešu valoda</option>
 		<!-- Moldau (Moldawien) -->
 		<option value="md" disabled>&#x1F1F2;&#x1F1E9; &nbsp; MD - moldovenească</option>
-		<!-- Malata -->
+		<!-- Malta -->
 		<option value="mt" disabled>&#x1F1F2;&#x1F1F9; &nbsp; MT - Malti</option>
 		<!-- Niederlande -->
 		<option value="nl">&#x1F1F3;&#x1F1F1; &nbsp; NL - Nederlands</option>
 		<!-- Polen -->
-		<option value="pl" disabled>&#x1F1F5;&#x1F1F1; &nbsp; PL - polski</option>
+		<option value="pl" disabled>&#x1F1F5;&#x1F1F1; &nbsp; PL - polish</option>
 		<!-- Portugal -->
 		<option value="pt" disabled>&#x1F1F5;&#x1F1F9; &nbsp; PT - português</option>
 		<!-- Rumänien -->
@@ -248,12 +250,15 @@
 		<option value="se" disabled>&#x1F1F8;&#x1F1EA; &nbsp; SE - svenska</option>
 		<!-- Ukraine -->
 		<option value="ua">&#x1F1FA;&#x1F1E6; &nbsp; UA - українська</option>
-      </select>
-    </nav>
-    <a id="gallery-title" onclick="showMission()">
-      <h2 id="balcony-text">Nicht nur der verlorene Balkon Europas!</h2>
-      <h1 id="georgia-text">Georgien</h1>
-    </a>
+        </select>
+	  </div>
+    </div>
+  </div>
+  <div style="margin-top: 20px; position: relative;">
+  <a id="gallery-title" onclick="showMission()">
+    <h2 id="balcony-text">Nicht nur der verlorene Balkon Europas!</h2>
+    <h1 id="georgia-text">Georgien</h1>
+  </a>
   </header>
   <section id="index-gallery" class="wrapper-gallery">
     <div class="gallery-img gallery1 gallery2 gallery3 gallery4 gallery7 img-1">
@@ -459,14 +464,14 @@
     </div>
   </section>
   <script src="js/gallery.js"></script>
-
-  <table id="footer-main" style="width:100%;table-layout:fixed;border-collapse:separate !important;border-spacing:20px 10px;" width="100%">
-    <tr>
-	  <td class="footer-links">
-	  <a style="color: black; text-decoration: underline; text-decoration-thickness: 3px;" onclick="showImpressum()">Impressum</a>
+  <section id="footer-main">
+  <div class="container">
+  <div class="media-container-row">
+	<div class="footer-links">
+	  <a style="color: black; text-decoration: underline; text-decoration-thickness: 3px;" onclick="showImpressum()">Impressum</a> &nbsp;
 	  <a href="mailto:info@lostbalcony.eu">Contact</a>
-	  </td>
-	  <td class="footer-socicon">
+	</div>
+	<div class="footer-socicon">
 	  <a style="color: black; text-decoration: none;" href="mailto:?body=%0AInformationen%20zur%20Online-Initiative%20%23lostbalcony%20findest%20Du%20unter%3A%20http%3A%2F%2Flostbalcony.eu%0A&subject=%23lostbalcony">
 		<span class="socicon-mail socicon mbr-iconfont mbr-iconfont-social" title="E-Mail senden"></span>
 	  </a> &nbsp;
@@ -490,9 +495,10 @@
 	  <a style="color: black; text-decoration: none;" href="https://api.whatsapp.com/send?text=Informationen+zu%23lostbalcony+gibt+es+unter+http%3A%2F%2Flostbalcony.eu" title="WhatsApp" target="_blank">
 		<span class="socicon-whatsapp socicon mbr-iconfont mbr-iconfont-social"></span>
 	  </a>
-	  </td>
-	<td class="footer-copyright">© Copyright 2022 lostbalcony.eu - All Rights Reserved </td>
-	</tr>
-  </table>
+	</div>
+	<div class="footer-copyright">© Copyright 2022 lostbalcony.eu - All Rights Reserved </div>
+  </div>
+  <div>
+  </section>
 </body>
 </html>

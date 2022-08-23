@@ -48,46 +48,43 @@ div {
 }
 
 /* Page styling */
-#header-main nav {
-    display: grid;
-    grid-template-columns: 240px 3fr;
-    grid-template-rows: auto;
+#header-main div {
+    display: block;
     padding-bottom: 10px;
-    margin: 0 1vw;
+    margin: 1vw;
 }
 
-nav select {
+#header-main div select {
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
+	padding: 0px;
+    justify-self: end;
 	cursor: pointer;
 }
 
-#language-picker-select {
-	margin-top: 70px;
-}
-
-#header-main nav select {
-	padding: 0px;
-    justify-self: end;
-}
-
-#header-main nav select option {
+#header-main div select option {
     display: inline-block;
     list-style: none;
     justify-self: end;
     margin: 40px 0 40px 30px;
 }
 
-#header-main nav selection option a {
+#header-main div select option a {
     color: #111111;
-    font-family: Arial, Helvetica, sans-serif;
-	
+    font-family: Arial, Helvetica, sans-serif;	
     text-decoration: none;
     text-transform: uppercase;
 }
 
-#header-main nav select option a:hover {
+#header-main div select option a:hover {
     opacity: 0.9;
+}
+
+.container {
+	max-width: 100%;
+	position: relative;
+	word-wrap: break-word;
+	margin-top: 20px;
 }
 
 #footer-main {
@@ -98,15 +95,16 @@ nav select {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
   padding-bottom: 20px;
-  left: 0px;
+  left: 20px;
+  position: absolute;
 }
 
 #footer-main .footer-socicon {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
   padding-bottom: 20px;
-  white-space: nowrap;
-  text-align: center;
+  right: 20px;
+  position: absolute;
 }
 
 #footer-main .footer-links a {
@@ -124,9 +122,9 @@ nav select {
 #footer-main .footer-copyright {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
-  white-space: nowrap;
   padding-bottom: 20px;
-  right: 0px;
+  white-space: nowrap;
+  text-align: center;
 }
   
 /* mouse over link */

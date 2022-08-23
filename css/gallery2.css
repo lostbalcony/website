@@ -13,8 +13,66 @@
 	"img11 img11";     	/*  5 */
     cursor: pointer;
 }
+
 .gallery1 {display: none;  visibility: hidden; }
 .gallery2 {display: block; visibility: visible; }
 .gallery3 {display: none;  visibility: hidden; }
 .gallery4 {display: none;  visibility: hidden; }
 .gallery7 {display: none;  visibility: hidden; }
+
+.media-container-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: start;
+}
+
+.select-container {
+  display: flex;
+  right: 0px;
+  position: absolute;
+  text-align:center;
+  justify-content: center;
+  align-content: center;
+}
+
+#footer-main .footer-links {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  padding-bottom: 20px;
+  position: relative;
+  white-space: nowrap;
+  text-align: center;
+}
+
+#footer-main .footer-socicon {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  padding-top: 44px;
+  padding-bottom: 20px;
+  position: relative;
+  white-space: nowrap;
+  text-align: center;
+}
+
+#footer-main .footer-links a {
+  color: black;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+} 
+
+#footer-main .footer-socicon a {
+  color: black;
+  text-decoration: none;
+} 
+
+#footer-main .footer-copyright {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  padding-bottom: 20px;
+  position: relative;
+  white-space: nowrap;
+  text-align: center;
+}

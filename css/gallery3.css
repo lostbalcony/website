@@ -12,8 +12,20 @@
 
     cursor: pointer;
 }
+
 .gallery1 {display: none;  visibility: hidden; }
 .gallery2 {display: none;  visibility: hidden; }
 .gallery3 {display: block; visibility: visible; }
 .gallery4 {display: none;  visibility: hidden; }
 .gallery7 {display: none;  visibility: hidden; }
+
+.media-container-row {
+  display: block;
+  flex-wrap: nowrap;
+}
+
+.select-container {
+  display: block;
+  right: 0px;
+  position: absolute;
+}
