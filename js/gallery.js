@@ -133,7 +133,7 @@ function changeImg(changeDir) {
     // Change the button positions
     newImg.onload = function(){
         let imgWidth = this.width;
-        let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
+        let calcImgToEdge = ((windowWidth - imgWidth) / 2) - (windowWidth/10);
 
         let nextBtn = document.querySelector(".img-btn-next");
         nextBtn.style.cssText = "right: " + calcImgToEdge + "px;";
