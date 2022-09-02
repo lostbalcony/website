@@ -77,7 +77,7 @@
 	var container = document.body;
 	var newMissionWindow = document.createElement("div");
 	newMissionWindow.setAttribute("class", "text-window");
-	newMissionWindow.setAttribute("onclick", "closeText()");
+	//newMissionWindow.setAttribute("onclick", "closeText()");
 	container.appendChild(newMissionWindow);
 	var newMissionText = document.createElement("div");
 	var mText = document.createElement('iframe');
@@ -87,18 +87,23 @@
 	mText.width = "100%"
 	mText.height = "100%"
 	mText.src = currentLang + ".html";
-	mText.setAttribute("onclick", "closeText()");
+	//mText.setAttribute("onclick", "closeText()");
 	newMissionText.appendChild(mText);
 	newMissionWindow.appendChild(newMissionText);
 	var button = document.createElement('button');
 	button.innerHTML = 'EXIT';
     button.setAttribute("class", "img-btn-next");
-	button.style.position = 'fixed';
     button.style.top = '10px';
 	button.onclick = function() {
 		this.parentNode.style.display = 'none';
 	};
 	newMissionWindow.appendChild(button);
+	document.addEventListener("keydown", function(event) {
+		event.preventDefault();
+        if (event.keyCode == 27) {
+			closeText();
+		}
+	});
   }
   
   function changeLang(event) {
@@ -125,7 +130,7 @@
 	var newMissionWindow = document.createElement("div");
 	newMissionWindow.setAttribute("class", "text-window");
 	newMissionWindow.setAttribute("id", "text");
-	newMissionWindow.setAttribute("onclick", "closeText()");
+	//newMissionWindow.setAttribute("onclick", "closeText()");
 	container.appendChild(newMissionWindow);
 	var newMissionText = document.createElement("div");
 	var mText = document.createElement('iframe');
@@ -135,18 +140,23 @@
 	mText.width = "100%"
 	mText.height = "100%"
 	mText.src = "impressum.html";
-	mText.setAttribute("onclick", "closeText()");
+	//mText.setAttribute("onclick", "closeText()");
 	newMissionText.appendChild(mText);
 	newMissionWindow.appendChild(newMissionText);
 	var button = document.createElement('button');
 	button.innerHTML = 'EXIT';
     button.setAttribute("class", "img-btn-next");
-	button.style.position = 'fixed';
     button.style.top = '10px';
 	button.onclick = function() {
 		this.parentNode.style.display = 'none';
 	};
 	newMissionWindow.appendChild(button);
+	document.addEventListener("keydown", function(event) {
+		event.preventDefault();
+        if (event.keyCode == 27) {
+			closeText();
+		}
+	});
   }
   
   function isAnyClassVisible(classes) {

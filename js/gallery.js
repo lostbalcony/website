@@ -24,7 +24,7 @@ if(galleryImages) {
             let newImgWindow = document.createElement("div");
             container.appendChild(newImgWindow);
             newImgWindow.setAttribute("class", "img-window");
-            newImgWindow.setAttribute("onclick", "closeImg()");
+            //newImgWindow.setAttribute("onclick", "closeImg()");
             
             // Insert image inside window
             let newImg = document.createElement("img");
@@ -60,10 +60,8 @@ if(galleryImages) {
 				button.innerHTML = 'EXIT';
 				button.id = 'exit';
                 button.setAttribute("class", "img-btn-next");
-				button.style.position = 'fixed';
 				button.style.top = '10px';
 				button.style.left = '49%';
-				button.style.zIndex = 200;
 				button.onclick = function() {
 					closeImg();
 				};
@@ -133,13 +131,13 @@ function changeImg(changeDir) {
     // Change the button positions
     newImg.onload = function(){
         let imgWidth = this.width;
-        let calcImgToEdge = ((windowWidth - imgWidth) / 2) - (windowWidth/10);
+        let calcImgToEdge = ((windowWidth - imgWidth) / 2);
 
         let nextBtn = document.querySelector(".img-btn-next");
-        nextBtn.style.cssText = "right: " + calcImgToEdge + "px;";
+        nextBtn.style.cssText = "right: " + (calcImgToEdge - 100) + "px;";
 
         let prevBtn = document.querySelector(".img-btn-prev");
-        prevBtn.style.cssText = "left: " + calcImgToEdge + "px;";
+        prevBtn.style.cssText = "left: " + (calcImgToEdge - 80) + "px;";
     }
 }
 

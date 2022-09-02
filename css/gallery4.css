@@ -33,6 +33,7 @@
 #footer-main .footer-links {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
+  padding-top: 4px;
   padding-bottom: 20px;
   left: 20px;
   position: absolute;
@@ -41,6 +42,7 @@
 #footer-main .footer-socicon {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
+  padding-top: 4px;
   padding-bottom: 20px;
   right: 20px;
   position: absolute;
@@ -60,6 +62,7 @@
 #footer-main .footer-copyright {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
+  padding-top: 4px;
   padding-bottom: 20px;
   white-space: nowrap;
   text-align: center;
